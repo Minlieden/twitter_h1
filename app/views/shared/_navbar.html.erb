@@ -1,8 +1,13 @@
-<div>
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
   <% if signed_in? %>
-    <%= link_to "Salir", destroy_user_session_path, method: :delete %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <button type="button" class="btn btn-lg btn-primary" disabled><%= link_to "Salir", destroy_user_session_path, method: :delete %></button>
   <% else %>
-    <%= link_to "Registrarse", new_user_registration_path %>
-    <%= link_to "Ingresar", new_user_session_path %>
+    <button class="btn btn-outline-success" type="button"><%= link_to "Registrarse", new_user_registration_path %></button>
+    <button class="btn btn-sm btn-outline-secondary" type="button"><%= link_to "Ingresar", new_user_session_path %></button>
   <% end %>
-</div>
+  </form>
+</nav>
+

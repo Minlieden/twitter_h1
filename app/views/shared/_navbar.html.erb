@@ -3,11 +3,7 @@
     <form class="form-inline container-fluid">
       <% if signed_in? %>
         <div class="row container-fluid">
-          <div class="col-6 d-flex justify-content-start">
-            <b class="notice"><%= notice %></b>
-            <b class="alert"><%= alert %></b>
-          </div>
-          
+          <div class="col-6 d-flex justify-content-start"><div><%= link_to current_user.username, edit_user_registration_path%></div></div>
           <div class="col-6 d-flex justify-content-end"><button type="button" class="btn btn-light btn btn-outline-primary"><%= link_to "Salir", destroy_user_session_path, method: :delete %></button></div>
         
       <% else %>

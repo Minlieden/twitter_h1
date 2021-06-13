@@ -3,7 +3,15 @@
     <form class="form-inline container-fluid">
       <% if signed_in? %>
         <div class="row container-fluid">
-          <div class="col-6 d-flex justify-content-start"><div><%= link_to current_user.username, edit_user_registration_path%></div></div>
+          <!-- <div class="col-2 d-flex justify-content-start"><div><img src= "<%= current_user.profile_picture %>" alt="<%=current_user.username%>" class= "img-thumbnail w-25 p-1"></div></div> -->
+          <div class="col-6 d-flex justify-content-start">
+            <div class ="mx-0">
+              <img src= "<%= current_user.profile_picture %>" alt="<%=current_user.username%>" class= "img-thumbnail w-25 p-0">
+            </div> 
+            <div class ="my-2">
+              <%= link_to current_user.username, edit_user_registration_path%>
+            </div>
+          </div>
           <div class="col-6 d-flex justify-content-end"><button type="button" class="btn btn-light btn btn-outline-primary"><%= link_to "Salir", destroy_user_session_path, method: :delete %></button></div>
         
       <% else %>
@@ -16,3 +24,4 @@
     </form>
   </nav>
 </div>
+

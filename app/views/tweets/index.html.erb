@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="container">
+    <h1>Tweets</h1>
+    <% @tweets.reverse.each do |tweet| %>
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src=<%= tweet.user.profile_picture %> alt=<%=tweet.user.username%> class=" img-thumbnail w-75 p-0">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><%= tweet.user.username %></h5>
+            <p class="card-text"><%= tweet.contenido %></p>
+            <p class="card-text"><small class="text-muted"> <%=time_ago_in_words(tweet.created_at) %> </small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
